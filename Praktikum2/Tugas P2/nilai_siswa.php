@@ -59,7 +59,7 @@
                     <th scope="col">Nilai UAS</th>
                     <th scope="col">Nilai Tugas</th>
                     <th scope="col">Total Nilai</th>
-                    <th scope="col">Grande Nilai</th>
+                    <th scope="col">Grande</th>
                     <th scope="col">Keterangan</th>
                 </tr>
             </thead>
