@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body style="background-image: linear-gradient( 109.6deg,  rgba(221,221,221,1) 11.2%, rgba(221,221,221,1) 34%, rgba(187,187,187,1) 79.8% );">
     <header style="background-color: #f1f2f3; padding: 10px;">
         Sistem Penilaian
@@ -19,35 +21,35 @@
         <div class="form-group row" style="margin-left: 8em;">
             <label for="nama" class="col-4 col-form-label" style="text-align:end;">Nama Lengkap</label>
             <div class="col-4">
-                <input id="nama" name="nama" placeholder="Nama Lengkap" type="text" class="form-control">
+                <input id="nama" name="nama" placeholder="Nama Lengkap" type="text" class="form-control" required>
             </div>
         </div>
         <div class="form-group row" style="margin-left: 8em;">
             <label for="matkul" class="col-4 col-form-label" style="text-align:end;">Mata Kuliah</label>
             <div class=" col-4">
                 <select id="matkul" name="matkul" class="custom-select">
-                    <option value="ddp">Dasar Dasar Pemrograman</option>
-                    <option value="jarkom">Jaringan Komputer</option>
-                    <option value="basdat">Basis Data</option>
+                    <option value="Dasar Dasar Pemrograman">Dasar Dasar Pemrograman</option>
+                    <option value="Jaringan Komputer">Jaringan Komputer</option>
+                    <option value="Basis Data">Basis Data</option>
                 </select>
             </div>
         </div>
         <div class="form-group row" style="margin-left: 8em;">
             <label for="uts" class="col-4 col-form-label" style="text-align:end;">Nilai UTS</label>
             <div class="col-2">
-                <input id="uts" name="uts" placeholder="Nilai UTS" type="number" class="form-control">
+                <input id="uts" name="uts" placeholder="Nilai UTS" type="number" class="form-control" required>
             </div>
         </div>
         <div class="form-group row" style="margin-left: 8em;">
             <label for="uas" class="col-4 col-form-label" style="text-align:end;">Nilai UAS</label>
             <div class="col-2">
-                <input id="uas" name="uas" placeholder="Nilai UAS" type="number" class="form-control">
+                <input id="uas" name="uas" placeholder="Nilai UAS" type="number" class="form-control" required>
             </div>
         </div>
         <div class="form-group row" style="margin-left: 8em;">
             <label for="tugas" class="col-4 col-form-label" style="text-align:end;">Nilai Tugas/Praktikum</label>
             <div class="col-2">
-                <input id="tugas" name="tugas" placeholder="Nilai Tugas" type="number" class="form-control">
+                <input id="tugas" name="tugas" placeholder="Nilai Tugas" type="number" class="form-control" required>
             </div>
         </div>
         <div class="form-group row" style="margin-left: 8em;">
@@ -56,8 +58,9 @@
             </div>
         </div>
     </form>
-    <footer style="background-color: #f1f2f3; padding: 10px;">
+    <footer style="background-color: #f1f2f3; padding: 8px;">
         Develop By @Jayman &#169;2023
     </footer>
 </body>
+
 </html>
