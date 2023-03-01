@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertemuan-ke2</title>
+    <title>Praktikum-ke2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -20,9 +20,9 @@
         <label for="matkul" class="col-4 col-form-label">Mata Kuliah</label> 
         <div class="col-8">
         <select id="matkul" name="matkul" class="custom-select">
-            <option value="Python">DDP</option>
-            <option value="DATABASE">Basis data</option>
-            <option value="ENGGRIS">B.inggris</option>
+            <option value="Dasar Dasar Pemrograman">DDP</option>
+            <option value="Dasar My SQL/ Maria DB">Basis data</option>
+            <option value="Pemrograman Web">PemWeb02</option>
         </select>
         </div>
     </div>
