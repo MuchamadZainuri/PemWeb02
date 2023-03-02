@@ -66,7 +66,9 @@
         </div>
 
         <?php if(isset($_POST['submit'])) : ?>
-
+            
+            <br>
+            <br>
             Nama Customer : <?= $_POST['customer'] ?>
             <br>
             Produk Pilihan : <?= $_POST['produk'] ?>

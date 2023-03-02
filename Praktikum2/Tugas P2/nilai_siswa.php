@@ -25,6 +25,30 @@
     } else {
         $_ketsis = 'Tidak Lulus';
     }
+
+    switch ($_range) {
+        case $_range == 'A':
+            $_predikat = "Sangat Memuaskan";
+            break;
+        case $_range == 'B':
+            $_predikat = "Memuaskan";
+            break;
+        case $_range == 'C':
+            $_predikat = "Cukup";
+            break;
+        case $_range == 'D':
+            $_predikat = "Kurang";
+            break;
+        case $_range == 'E':
+            $_predikat = "Sangat Kurang";
+            break;
+        case $_range == 'I':
+            $_predikat = "Tidak Ada";
+            break;
+        default:
+            echo ' ' ;
+            break;
+    }
     ?>
 
     <!DOCTYPE html>
@@ -61,6 +85,7 @@
                     <th scope="col">Total Nilai</th>
                     <th scope="col">Grande</th>
                     <th scope="col">Keterangan</th>
+                    <th scope="col">Predikart</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,6 +98,7 @@
                     <td><?= ((int)$_nTotal) ?></td>
                     <td><?= $_range ?></td>
                     <td><?= $_ketsis ?></td>
+                    <td><?= $_predikat ?></td>
                 </tr>
         </table>
         <div class="text-center mt-5">
