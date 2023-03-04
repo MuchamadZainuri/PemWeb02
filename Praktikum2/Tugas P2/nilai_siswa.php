@@ -16,7 +16,7 @@
         $_range = 'D';
     } elseif ($_nTotal <= 69 && $_nTotal >= 56) {
         $_range = 'C';
-    } elseif ($_nTotal <= 84 && $_nTotal >= 70) {
+    } elseif ($_nTotal >= 70 && $_nTotal <= 84) {
         $_range = 'B';
     } elseif ($_nTotal >= 85 && $_nTotal <= 100) {
         $_range = 'A';
