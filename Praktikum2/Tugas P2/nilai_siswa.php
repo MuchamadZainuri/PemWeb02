@@ -1,53 +1,59 @@
     <?php
+    // Membuat Variable
     $_nama = $_POST['nama'];
     $_matkul = $_POST['matkul'];
     $_uts = $_POST['uts'];
     $_uas = $_POST['uas'];
     $_tugas = $_POST['tugas'];
 
+    // Mencari nilai Total
     $_nTotal = (0.30 * $_POST['uts']) + (0.35 * $_POST['uas']) + (0.35 * $_POST['tugas']);
+    
+    // Mencari Nilai Grade
     if ($_nTotal >= 0 && $_nTotal <= 35) {
         $_range = 'E';
     } elseif ($_nTotal >= 36 && $_nTotal <= 55) {
         $_range = 'D';
-    } elseif ($_nTotal >= 56 && $_nTotal <= 69) {
+    } elseif ($_nTotal <= 69 && $_nTotal >= 56) {
         $_range = 'C';
-    } elseif ($_nTotal >= 70 && $_nTotal <= 84) {
+    } elseif ($_nTotal <= 84 && $_nTotal >= 70) {
         $_range = 'B';
     } elseif ($_nTotal >= 85 && $_nTotal <= 100) {
         $_range = 'A';
-    } else {
+    } elseif ($_nTotal < 0 && $_nTotal > 100) {
         $_range = 'I';
     }
 
+
+    // Menentukan Predikat 
+    switch ($_range) {
+        case $_range = 'A':
+            $_predikat = "Sangat Memuaskan";
+            break;
+        case $_range = 'B':
+            $_predikat = "Memuaskan";
+            break;
+        case $_range = 'C':
+            $_predikat = "Cukup";
+            break;
+        case $_range = 'D':
+            $_predikat = "Kurang";
+            break;
+        case $_range = 'E':
+            $_predikat = "Sangat Kurang";
+            break;
+        case $_range = 'I':
+            $_predikat = "Tidak Ada";
+            break;
+        default:
+            break;
+    }
+
+    // Menetukan Keterangan
     if ($_nTotal > 55) {
         $_ketsis = 'Lulus';
     } else {
         $_ketsis = 'Tidak Lulus';
-    }
-
-    switch ($_range) {
-        case $_range == 'A':
-            $_predikat = "Sangat Memuaskan";
-            break;
-        case $_range == 'B':
-            $_predikat = "Memuaskan";
-            break;
-        case $_range == 'C':
-            $_predikat = "Cukup";
-            break;
-        case $_range == 'D':
-            $_predikat = "Kurang";
-            break;
-        case $_range == 'E':
-            $_predikat = "Sangat Kurang";
-            break;
-        case $_range == 'I':
-            $_predikat = "Tidak Ada";
-            break;
-        default:
-            echo ' ' ;
-            break;
     }
     ?>
 
@@ -58,7 +64,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Nilai Siswa</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <style>
             body {
