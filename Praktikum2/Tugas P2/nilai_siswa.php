@@ -19,19 +19,19 @@
     $_nTotal =($_uts + $_uas + $_tugas) / 3;
     
     // Mencari Nilai Grade dan Predikat
-    if ($_nTotal <= 35.9) {
+    if ($_nTotal <= 35) {
         $_range = 'E';
         $_predikat = 'Sangat Kurang';
 
-    } elseif ($_nTotal <= 55.9) {
+    } elseif ($_nTotal <= 55) {
         $_range = 'D';
         $_predikat = 'Kurang';
 
-    } elseif ($_nTotal <= 69.9) {
+    } elseif ($_nTotal <= 69) {
         $_range = 'C';
         $_predikat = 'Cukup';
 
-    } elseif ($_nTotal <= 84.9) {
+    } elseif ($_nTotal <= 84) {
         $_range = 'B';
         $_predikat = 'Baik';
 
@@ -85,7 +85,7 @@
                     <th scope="col">Nilai UTS</th>
                     <th scope="col">Nilai UAS</th>
                     <th scope="col">Nilai Tugas</th>
-                    <th scope="col">Total Nilai</th>
+                    <th scope="col">Nilai Rata-Rata</th>
                     <th scope="col">Grande</th>
                     <th scope="col">Keterangan</th>
                     <th scope="col">Predikat</th>
@@ -98,7 +98,7 @@
                     <td><?= $_uts ?></td>
                     <td><?= $_uas ?></td>
                     <td><?= $_tugas ?></td>
-                    <td><?= ((int)$_nTotal) ?></td>
+                    <td><?= number_format ($_nTotal, 1, ',') ?></td>
                     <td><?= $_range ?></td>
                     <td><?= $_ketsis ?></td>
                     <td><?= $_predikat ?></td>
