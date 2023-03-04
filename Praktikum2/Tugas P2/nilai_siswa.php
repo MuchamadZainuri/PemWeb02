@@ -6,11 +6,17 @@
     $_uas = $_POST['uas'];
     $_tugas = $_POST['tugas'];
     
+    // untuk mengecek apakah nilai yang diinputkan benar atau tidak
+    if (is_numeric($_uts) && is_numeric($_uas) && is_numeric($_tugas)) {
+        if ($_uts > 100 || $_uas > 100 || $_tugas > 100) {
+            echo "<script>alert('Nilai yang anda masukkan salah!');window.location='form_nilai.php';</script>";
+        }
+    } else {
+        echo "<script>alert('Nilai yang anda masukkan salah!');window.location='form_nilai.php';</script>";
+    }
+    
     // Mencari Nilai Rata-rata dan Menetukan Nilai Total
     $_nTotal =($_uts + $_uas + $_tugas) / 3;
-    if ($_uas || $_uts || $_tugas < 0 || $_uas || $_uts || $_tugas > 100) {
-        $_nTotal = "Nilai not valid";
-    }
     
     // Mencari Nilai Grade dan Predikat
     if ($_nTotal <= 35.9) {
