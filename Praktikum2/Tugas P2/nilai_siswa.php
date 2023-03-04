@@ -7,7 +7,7 @@
     $_tugas = $_POST['tugas'];
     
     // untuk mengecek apakah nilai yang diinputkan benar atau tidak
-    if (is_numeric($_uts) && is_numeric($_uas) && is_numeric($_tugas)) {
+    if ($_uts >= 0 && $_uas >= 0 && $_tugas >= 0) {
         if ($_uts > 100 || $_uas > 100 || $_tugas > 100) {
             echo "<script>alert('Nilai yang anda masukkan salah!');window.location='form_nilai.php';</script>";
         }
