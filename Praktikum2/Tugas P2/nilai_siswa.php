@@ -6,36 +6,46 @@
     $_uas = $_POST['uas'];
     $_tugas = $_POST['tugas'];
     
-    // Mencari nilai Total
-    $_nTotal = (0.30 * $_POST['uts']) + (0.35 * $_POST['uas']) + (0.35 * $_POST['tugas']);
+    // Mencari Nilai Rata-rata dan Menetukan Nilai Total
+    $_nTotal =($_uts + $_uas + $_tugas) / 3;
+    if ($_uas || $_uts || $_tugas < 0 || $_uas || $_uts || $_tugas > 100) {
+        $_nTotal = "Nilai not valid";
+    }
     
     // Mencari Nilai Grade dan Predikat
-    if ($_nTotal <= 35) {
+    if ($_nTotal <= 35.9) {
         $_range = 'E';
         $_predikat = 'Sangat Kurang';
-    } elseif ($_nTotal <= 55) {
+
+    } elseif ($_nTotal <= 55.9) {
         $_range = 'D';
         $_predikat = 'Kurang';
-    } elseif ($_nTotal <= 69) {
+
+    } elseif ($_nTotal <= 69.9) {
         $_range = 'C';
         $_predikat = 'Cukup';
-    } elseif ($_nTotal <= 84 ) {
+
+    } elseif ($_nTotal <= 84.9) {
         $_range = 'B';
         $_predikat = 'Baik';
+
     } elseif ($_nTotal <= 100) {
         $_range = 'A';
         $_predikat = 'Sangat Baik';
+
     } else{
         $_range = 'I';
         $_predikat = 'Tidak Ada';
     }
 
     // Menetukan Keterangan
-    if ($_nTotal > 55) {
+    if ($_nTotal > 55 && $_nTotal <= 100) {
         $_ketsis = 'Lulus';
     } else {
         $_ketsis = 'Tidak Lulus';
     }
+
+    
     ?>
 
     <!DOCTYPE html>
