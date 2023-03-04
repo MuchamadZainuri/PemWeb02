@@ -5,48 +5,29 @@
     $_uts = $_POST['uts'];
     $_uas = $_POST['uas'];
     $_tugas = $_POST['tugas'];
-
+    
     // Mencari nilai Total
     $_nTotal = (0.30 * $_POST['uts']) + (0.35 * $_POST['uas']) + (0.35 * $_POST['tugas']);
     
-    // Mencari Nilai Grade
-    if ($_nTotal >= 0 && $_nTotal <= 35) {
+    // Mencari Nilai Grade dan Predikat
+    if ($_nTotal <= 35) {
         $_range = 'E';
-    } elseif ($_nTotal >= 36 && $_nTotal <= 55) {
+        $_predikat = 'Sangat Kurang';
+    } elseif ($_nTotal <= 55) {
         $_range = 'D';
-    } elseif ($_nTotal <= 69 && $_nTotal >= 56) {
+        $_predikat = 'Kurang';
+    } elseif ($_nTotal <= 69) {
         $_range = 'C';
-    } elseif ($_nTotal >= 70 && $_nTotal <= 84) {
+        $_predikat = 'Cukup';
+    } elseif ($_nTotal <= 84 ) {
         $_range = 'B';
-    } elseif ($_nTotal >= 85 && $_nTotal <= 100) {
+        $_predikat = 'Baik';
+    } elseif ($_nTotal <= 100) {
         $_range = 'A';
-    } elseif ($_nTotal < 0 && $_nTotal > 100) {
+        $_predikat = 'Sangat Baik';
+    } else{
         $_range = 'I';
-    }
-
-
-    // Menentukan Predikat 
-    switch ($_range) {
-        case $_range = 'A':
-            $_predikat = "Sangat Memuaskan";
-            break;
-        case $_range = 'B':
-            $_predikat = "Memuaskan";
-            break;
-        case $_range = 'C':
-            $_predikat = "Cukup";
-            break;
-        case $_range = 'D':
-            $_predikat = "Kurang";
-            break;
-        case $_range = 'E':
-            $_predikat = "Sangat Kurang";
-            break;
-        case $_range = 'I':
-            $_predikat = "Tidak Ada";
-            break;
-        default:
-            break;
+        $_predikat = 'Tidak Ada';
     }
 
     // Menetukan Keterangan
@@ -91,7 +72,7 @@
                     <th scope="col">Total Nilai</th>
                     <th scope="col">Grande</th>
                     <th scope="col">Keterangan</th>
-                    <th scope="col">Predikart</th>
+                    <th scope="col">Predikat</th>
                 </tr>
             </thead>
             <tbody>
