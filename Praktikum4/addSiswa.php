@@ -28,7 +28,7 @@ include_once "template/header.php";
 
     <!-- Main content -->
     <section class="content">
-        <form>
+        <form method="POST" action="home.php">
             <div class="form-group row">
                 <label for="text" class="col-4 col-form-label">Nama Lengkap</label>
                 <div class="col-8">
