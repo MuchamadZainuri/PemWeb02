@@ -2,6 +2,9 @@
 require_once '../dbkoneksi.php';
 ?>
 <?php
+if (!isset($_GET['idedit'])) {
+    header('location:../index.php');
+}
 $_idedit = $_GET['idedit'];
 if (!empty($_idedit)) {
     // edit
@@ -139,7 +142,7 @@ if (!empty($_idedit)) {
                     </div>
                     <div class="form-group row">
                         <div class="offset-4 col-8">
-                            <button name="proses" type="submit" class="btn btn-primary" style="background-color:#1A2140;border-color:#1A2140;" value="Update" onclick="if(!confirm('Anda Yakin Ingin Mengubah Data Pelanggan <?= $row['nama'] ?>?')) {return false}">Ubah Data</button>
+                            <button name="proses" type="submit" class="btn btn-primary" style="background-color:#1A2140;border-color:#1A2140;" value="Update" onclick="if(!confirm('Anda Yakin Ingin Mengubah Data Produk <?= $row['nama'] ?>?')) {return false}">Ubah Data</button>
                             <input type="hidden" name="idedit" value="<?= $_idedit ?>" />
                         </div>
                     </div>

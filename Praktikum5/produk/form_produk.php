@@ -1,5 +1,8 @@
 <?php
 require_once '../dbkoneksi.php';
+if (!isset($_GET['idcret'])) {
+  header('location:../index.php');
+}
 ?>
 
 <!DOCTYPE html>

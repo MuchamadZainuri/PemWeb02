@@ -2,6 +2,9 @@
 require_once '../dbkoneksi.php';
 ?>
 <?php
+if (!isset($_GET['idedit'])) {
+    header('location:../list_pelanggan.php');
+}
 $_idedit = $_GET['idedit'];
 if (!empty($_idedit)) {
     // edit

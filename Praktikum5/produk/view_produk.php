@@ -2,6 +2,9 @@
 require_once '../dbkoneksi.php';
 ?>
 <?php
+if (!isset($_GET['id'])) {
+    header('location:../index.php');
+}
 $_id = $_GET['id'];
 // select * from produk where id = $_id;
 //$sql = "SELECT a.*,b.nama as jenis FROM produk a
