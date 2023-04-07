@@ -35,10 +35,8 @@
             </div>
         </div>
         <div class="row main">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6">
-                <form method="post" action="class_bmipasien.php">
+            <div class="col-md-8">
+                <form method="post" action="">
                     <div class="form-group row">
                         <label for="nama" class="col-4 col-form-label">Nama</label>
                         <div class="col-8">
@@ -119,12 +117,59 @@
                     </div>
                     <div class="form-group row">
                         <div class="offset-4 col-8">
-                            <button name="submit" type="submit" class="btn btn-primary">Kirim</button>
+                            <button name="submit" type="submit" class="btn btn-primary" value="hasil">Kirim</button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
+                <?php
+                if (isset($_POST["submit"])) {
+                    require "class_bmipasien.php";
+                    $pasien = new BmiPasien($_POST['nama'], $_POST['umur'], $_POST['jk'], $_POST['bb'], $_POST['tb']);
+                ?>
+                    <div class="card">
+                        <div class="card-header">
+                            Hasil Evaluasi BMI
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex;">
+                                <p class="card-text col-5">Nama</p>
+                                <div class="col-7">: <?= $pasien->nama ?></div>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="card-text col-5">Umur</p>
+                                <div class="col-7">: <?= $pasien->umur ?></div>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="card-text col-5">Jenis Kelamin</p>
+                                <div class="col-7">: <?= $pasien->jenis_kelamin ?></div>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="card-text col-5">Berat Badan</p>
+                                <div class="col-7">: <?= $pasien->berat ?></div>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="card-text col-5">Tinggi Badan</p>
+                                <div class="col-7">: <?= $pasien->tinggi?></div>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="card-text col-5">BMI</p>
+                                <div class="col-7">: <?= number_format($pasien->hasilBMI(), 2, ',') ?></div>
+                            </div>
+                            <div style="display: flex;">
+                                <p class="card-text col-5">Hasil</p>
+                                <div class="col-7">: <?= $pasien->statusBMI()?></div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="tabel.php" class="btn btn-success btn-sm">Tabel BMI</a>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+
             </div>
         </div>
         <div class="row foot">
