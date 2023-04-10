@@ -123,15 +123,15 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <?php
-                if (isset($_POST["submit"])) {
-                    require "class_bmipasien.php";
-                    $pasien = new BmiPasien($_POST['nama'], $_POST['umur'], $_POST['jk'], $_POST['bb'], $_POST['tb']);
-                ?>
                     <div class="card">
                         <div class="card-header">
                             Hasil Evaluasi BMI
                         </div>
+                        <?php
+                        if (isset($_POST["submit"])) {
+                            require "class_bmipasien.php";
+                            $pasien = new BmiPasien($_POST['nama'], $_POST['umur'], $_POST['jk'], $_POST['bb'], $_POST['tb']);
+                        ?>
                         <div class="card-body">
                             <div style="display: flex;">
                                 <p class="card-text col-5">Nama</p>
@@ -165,10 +165,10 @@
                         <div class="card-footer text-center">
                             <a href="tabel.php" class="btn btn-success btn-sm">Tabel BMI</a>
                         </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-                <?php
-                }
-                ?>
 
             </div>
         </div>
