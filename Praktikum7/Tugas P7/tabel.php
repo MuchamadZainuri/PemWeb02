@@ -1,5 +1,5 @@
 <?php
-require "class_bmipasien.php";
+include_once('class_bmipasien.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,9 @@ require "class_bmipasien.php";
         .main {
             min-height: 73vh;
         }
-        th,td{
+
+        th,
+        td {
             text-align: center;
         }
     </style>
@@ -42,7 +44,7 @@ require "class_bmipasien.php";
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
-            <a href="index.php" class="btn btn-success mb-3">Tambah pelanggan</a>
+            <a href="index.php" class="btn btn-success mb-3">Tambah Data Pasien</a>
             <table class="table table-striped">
                 <thead>
                     <tr class="table-danger">
@@ -57,36 +59,19 @@ require "class_bmipasien.php";
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Muchamad Zainuri</td>
-                        <td>Laki-Laki</td>
-                        <td>19</td>
-                        <td>60</td>
-                        <td>170</td>
-                        <td>20,76</td>
-                        <td>Normal (ideal)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Dimas Dwi Nugroho</td>
-                        <td>Laki-Laki</td>
-                        <td>21</td>
-                        <td>65</td>
-                        <td>165</td>
-                        <td>23,88</td>
-                        <td>Normal (ideal)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Aufar Kharina Nadhira</td>
-                        <td>Perempuan</td>
-                        <td>18</td>
-                        <td>62</td>
-                        <td>168</td>
-                        <td>21,97</td>
-                        <td>Normal (ideal)</td>
-                    </tr>
+                    <?php $index = 1;
+                    foreach ($_SESSION['result'] as $value) : ?>
+                        <tr>
+                            <td><?= $index++ ?></td>
+                            <td><?= $value['nama'] ?></td>
+                            <td><?= $value['jeniskelamin'] ?></td>
+                            <td><?= $value['umur'] ?></td>
+                            <td><?= $value['berat'] ?></td>
+                            <td><?= $value['tinggi'] ?></td>
+                            <td><?= $value['bmi'] ?></td>
+                            <td><?= $value['hasil'] ?></td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>

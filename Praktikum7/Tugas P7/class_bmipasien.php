@@ -2,32 +2,50 @@
 class BmiPasien{
     public $nama,
             $umur,
-            $jenis_kelamin,
+            $jeniskelamin,
             $berat,
             $tinggi;
 
-    public function __construct($nama, $umur, $jenis_kelamin, $berat, $tinggi){
-        $this->nama = $nama;
-        $this->umur = $umur;
-        $this->jenis_kelamin = $jenis_kelamin;
-        $this->berat = $berat;
-        $this->tinggi = $tinggi;    
+    public function __construct(){
+        session_start();
+        $_SESSION['result'] ?? $_SESSION['result'] = [];
     }
+
     public function hasilBMI(){
-        return $this->berat / (($this->tinggi/100) * ($this->tinggi/100));
+        $total = $this->statusBMI();
+        if ($total == 0) {
+            $msg = 'Zero value will be not forgiven';
+        } else if ($total < 18.5) {
+            $msg = 'Kekurangan berat badan';
+        } else if ($total >= 18.5 && $total <= 24.9) {
+            $msg = 'Normal (Ideal)';
+        } else if ($total >= 25 && $total <= 29.9) {
+            $msg = 'Kelebihan berat badan';
+        } else if ($total >= 30) {
+            $msg = 'Kegemukan (obesitas)';
+        } else {
+            $msg = 'Null or String value will be not forgiven';
+        }
+        $calc = [$total, $msg];
+        return $calc;
     }
 
     public function statusBMI(){
-        if ($this->hasilBMI() < 18.5) {
-            return "Kekurangan berat badan";
-        }elseif ($this->hasilBMI() <= 24.9) {
-            return "Normal (ideal)";
-        }elseif ($this->hasilBMI() <= 29.9) {
-            return "Kelebihan berat badan";
-        }elseif ($this->hasilBMI() <= 39.9) {
-            return "Kegemukan (Obesitas)";
+        $val = [$this->tinggi, $this->berat, $this->umur];
+        for ($i = 0; $i < count($val); $i++) {
+            if (!preg_replace('/^[0-9]/', '', $val[$i])) {
+                echo '<script> 
+    alert("Kudu Angka"); 
+    window.location.href = "index.php"; 
+    </script>';
+            }
         }
+        $tinggi = isset($this->tinggi) ? $this->tinggi / 100 : 0;
+        $total = isset($this->tinggi) ? substr($this->berat / ($tinggi * $tinggi), 0, 5) : 0;
+        return $total;
     }
 }
+
+$bmi = new BmiPasien();
 
 
