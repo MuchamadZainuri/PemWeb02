@@ -16,15 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/form', function () {
-    return view('P8/Tugas/form');
-});
-Route::get('/hello/{nama}/alamat', function ($nama, $alamat) {
+
+Route::get('/hello/{nama}/{alamat}', function ($nama, $alamat) {
     return "<h2> Hello $nama dari $alamat </h2>";
 });
 
 Route::get('/produk{id}', function ($id) {
-    return view('P9/produk/produk', ['id' => $id]);
+    return view('produk/index', ['id' => $id]);
 });
 
 use App\Http\Controllers\UserController;
@@ -37,3 +35,11 @@ Route::get('/user/daftar',
 
 Route::post('/user/store', 
     [UserController::class, 'store'])-> name('user/store');
+
+
+Route::get('/form', function () {
+    return view('Tugas/form');
+});
+
+Route::post('/form/proses',
+    [UserController::class, 'proses'])->name('form/proses');

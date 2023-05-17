@@ -8,12 +8,12 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('P9/user/index', ['kategoriuser' => 'admin']);
+        return view('user/index', ['kategoriuser' => 'admin']);
     }
     public function daftar()
     {
         $ar_kategori = ['Dosen', 'mahasiswa', 'Staff'];
-        return view('P9/user/daftar', ['kategori' => $ar_kategori]);
+        return view('user/daftar', ['kategori' => $ar_kategori]);
     }
     public function store(Request $request)
     {
@@ -22,8 +22,21 @@ class UserController extends Controller
         $kategori = $request->input('kategori');
         $alamat = $request->input('alamat');
         return view(
-            'P9/user/sukses',
+            'user/sukses',
             ['nama' => $nama, 'email' => $email, 'kategori' => $kategori, 'alamat' => $alamat]
+        );
+    }
+
+
+    public function proses(Request $request)
+    {
+        $nama = $request->input('nama');
+        $jk = $request->input('jk');
+        $cek = $request->input('tgl_cek');
+        $tgl = $request->input('tgl_lahir');
+        return view(
+            'Tugas/form',
+            ['nama' => $nama, 'jk' => $jk, 'cek' => $cek, 'tgl' => $tgl]
         );
     }
 }
