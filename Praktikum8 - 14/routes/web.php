@@ -43,3 +43,23 @@ Route::get('/form', function () {
 
 Route::post('/form/proses',
     [UserController::class, 'proses'])->name('form/proses');
+
+
+use App\Http\Controllers\TokoController;
+
+Route::prefix('toko') -> group(function(){
+
+    Route::get(
+        '/',
+        [TokoController::class, 'index']
+    );
+    Route::get(
+        '/detail',
+        [TokoController::class, 'detail']
+    );
+    Route::get(
+        '/profile',
+        [TokoController::class, 'index']
+    );
+    
+});
