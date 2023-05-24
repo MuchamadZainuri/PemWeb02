@@ -1,7 +1,9 @@
 @extends('template/main')
 
 @section('content')
-
+<br>
+<br>
+<br>
 <div class="row">
     <div class="col-md-4">
         <div class="card" style="width: 100%;">
@@ -28,9 +30,11 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-danger">Submit</button>
         </form>
     </div>
 </div>
-
+<br>
+<br>
+<br>
 @endsection

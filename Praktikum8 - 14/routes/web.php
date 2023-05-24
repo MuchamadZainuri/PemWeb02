@@ -58,8 +58,8 @@ Route::prefix('toko') -> group(function(){
         [TokoController::class, 'detail']
     );
     Route::get(
-        '/profile',
-        [TokoController::class, 'index']
+        '/about',
+        [TokoController::class, 'about']
     );
     
 });

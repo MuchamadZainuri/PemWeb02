@@ -1,16 +1,16 @@
 @extends('template/main')
 
-@section('content')
+@section('content1')
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active text-center">
-                <img src="img/img1.jpeg" class="" alt="..." width="70%">
+                <img src="img/banner1.png" class="" alt="...">
             </div>
             <div class="carousel-item text-center">
-                <img src="img/img2.jpeg" class="" alt="..." width="70%">
+                <img src="img/banner.png" class="" alt="..." >
             </div>
             <div class="carousel-item text-center">
-                <img src="img/img3.jpeg" class="" alt="..." width="70%">
+                <img src="img/banner2.png" class="" alt="..." >
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -23,13 +23,27 @@
         </button>
     </div>
     <br>
-    <h3>Lorem ipsum dolor sit amet.</h3>
+    <br>
+    <div class="container">
+    <h2 class="text-center ">Belanja hemat dan lengkap hanya di KrustyMart!</h2>
+    <br>
+        <p class="fs-5">KrustyMart adalah sebuah supermarket yang terkenal di kota ini. Di sana, Anda dapat menemukan berbagai macam produk, mulai dari makanan dan minuman hingga produk kecantikan dan perawatan pribadi. KrustyMart juga menawarkan harga yang terjangkau, sehingga banyak orang memilih untuk berbelanja di sana. Selain itu, KrustyMart juga memiliki program loyalitas yang menarik, dimana Anda bisa mendapatkan diskon dan hadiah menarik setiap kali berbelanja di sana. Dengan pelayanan yang ramah dan profesional, KrustyMart menjadi salah satu tempat favorit untuk berbelanja di kota ini.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 @endsection
 
 @section('content2')
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis ullam corrupti cumque illum. Consequatur pariatur deleniti eos cupiditate omnis ipsum tenetur hic facilis, inventore eum sapiente dolore, necessitatibus delectus sequi. Mollitia natus dolorum magnam tempora sapiente molestias repellat deleniti corrupti, voluptas quia delectus laboriosam adipisci illum assumenda voluptate nisi officia cum deserunt obcaecati consequatur temporibus quam! Inventore, quidem officia? Sapiente veniam molestiae eligendi alias, molestias aspernatur! Animi vel, saepe quas accusamus, dolorem aut, nisi reprehenderit eaque distinctio quae omnis?
     <br>
     <br>
+    <br>
+    <style>
+        .card:hover{
+            border: red 2px solid;
+        }
+    </style>
     <div class="row row-cols-2 row-cols-md-4 g-4 mb-5">
         <div class="col">
             <div class="card h-100">
@@ -80,4 +94,6 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
 @endsection
