@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Produk;
 class TokoController extends Controller
 {
     public function index()
@@ -17,5 +18,10 @@ class TokoController extends Controller
     public function about()
     {
     return view('toko/about');
+    }
+    public function admin()
+    {
+        $products = Produk::all();
+    return view('toko/admin', compact('products'));
     }
 }

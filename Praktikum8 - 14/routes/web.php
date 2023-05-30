@@ -61,5 +61,8 @@ Route::prefix('toko') -> group(function(){
         '/about',
         [TokoController::class, 'about']
     );
-    
+    Route::get(
+        '/admin',
+        [TokoController::class, 'admin']
+    );
 });
