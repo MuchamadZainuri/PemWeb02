@@ -43,6 +43,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/toko/about">About</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="toko/admin">Admin</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Pencarian" aria-label="Search">

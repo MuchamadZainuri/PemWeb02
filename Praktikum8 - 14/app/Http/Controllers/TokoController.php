@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 
 use App\Models\Produk;
@@ -21,7 +22,16 @@ class TokoController extends Controller
     }
     public function admin()
     {
+        return view('toko/admin');
+    }
+    public function produk()
+    {
         $products = Produk::all();
-    return view('toko/admin', compact('products'));
+    return view('toko/produk', compact('products'));
+    }
+    public function pelanggan()
+    {
+        $pelangan = Pelanggan::all();
+        return view('toko/pelanggan', compact('pelangan'));
     }
 }

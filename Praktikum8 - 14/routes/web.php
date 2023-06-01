@@ -65,4 +65,12 @@ Route::prefix('toko') -> group(function(){
         '/admin',
         [TokoController::class, 'admin']
     );
+    Route::get(
+        '/produk',
+        [TokoController::class, 'produk']
+    );
+    Route::get(
+        '/pelanggan',
+        [TokoController::class, 'pelanggan']
+    );
 });
