@@ -118,13 +118,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="produk" class="nav-link">
+                <a href="product" class="nav-link">
                   <i class="fas fa-chart-bar nav-icon"></i>
                   <p>Products</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pelanggan" class="nav-link">
+                <a href="customer" class="nav-link">
                   <i class="fas fa-users nav-icon"></i>
                   <p>Customers</p>
                 </a>

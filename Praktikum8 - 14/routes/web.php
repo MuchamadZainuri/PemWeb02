@@ -27,27 +27,35 @@ Route::get('/produk{id}', function ($id) {
 
 use App\Http\Controllers\UserController;
 
-Route::get('/user', 
-    [UserController::class, 'index']);
+Route::get(
+    '/user',
+    [UserController::class, 'index']
+);
 
-Route::get('/user/daftar', 
-    [UserController::class, 'daftar']);
+Route::get(
+    '/user/daftar',
+    [UserController::class, 'daftar']
+);
 
-Route::post('/user/store', 
-    [UserController::class, 'store'])-> name('user/store');
+Route::post(
+    '/user/store',
+    [UserController::class, 'store']
+)->name('user/store');
 
 
 Route::get('/form', function () {
     return view('Tugas/form');
 });
 
-Route::post('/form/proses',
-    [UserController::class, 'proses'])->name('form/proses');
+Route::post(
+    '/form/proses',
+    [UserController::class, 'proses']
+)->name('form/proses');
 
 
 use App\Http\Controllers\TokoController;
 
-Route::prefix('toko') -> group(function(){
+Route::prefix('toko')->group(function () {
 
     Route::get(
         '/',
@@ -66,30 +74,62 @@ Route::prefix('toko') -> group(function(){
         [TokoController::class, 'admin']
     );
     Route::get(
-        '/produk',
-        [TokoController::class, 'produk']
-    )->name('produk.admin');
-    Route::get(
-        '/pelanggan',
-        [TokoController::class, 'pelanggan']
-    );
+        '/product',
+        [TokoController::class, 'product']
+    )->name('product.admin');
+
     Route::get(
         'create',
-        [TokoController::class, 'create'])->name('produk.create');
+        [TokoController::class, 'create']
+    )->name('product.create');
 
     Route::post(
         '/',
-        [TokoController::class, 'store'])->name('produk.store');
+        [TokoController::class, 'store']
+    )->name('product.store');
 
     Route::get(
         '/{product}/edit',
-        [TokoController::class, 'edit'])->name('produk.edit');
+        [TokoController::class, 'edit']
+    )->name('product.edit');
 
     Route::delete(
         '/{product}',
-        [TokoController::class, 'destroy'])->name('produk.destroy');
+        [TokoController::class, 'destroy']
+    )->name('product.destroy');
 
     Route::put(
         '/{product}',
-        [TokoController::class, 'update'])->name('produk.update');
+        [TokoController::class, 'update']
+    )->name('product.update');
+
+    Route::get(
+        '/customer',
+        [TokoController::class, 'customer']
+    )->name('customer.admin');
+
+    Route::get(
+        'createc',
+        [TokoController::class, 'createc']
+    )->name('customer.create');
+
+    Route::post(
+        '/c',
+        [TokoController::class, 'storec']
+    )->name('customer.store');
+
+    Route::get(
+        '/{customer}/editc',
+        [TokoController::class, 'editc']
+    )->name('customer.edit');
+
+    Route::delete(
+        '/{customer}/c',
+        [TokoController::class, 'destroyc']
+    )->name('customer.destroy');
+
+    Route::put(
+        '/{customer}/c',
+        [TokoController::class, 'updatec']
+    )->name('customer.update');
 });
