@@ -65,71 +65,84 @@ Route::prefix('toko')->group(function () {
         '/detail',
         [TokoController::class, 'detail']
     );
+
+    
+    Route::group(['middleware' => ['auth']], function(){
+
+        Route::get(
+            '/product',
+            [TokoController::class, 'product']
+        )->name('product.admin');
+
+        Route::get(
+            'create',
+            [TokoController::class, 'create']
+        )->name('product.create');
+
+        Route::get(
+            '/admin',
+            [TokoController::class, 'admin']
+        );
+
+        Route::post(
+            '/',
+            [TokoController::class, 'store']
+        )->name('product.store');
+
+        Route::get(
+            '/{product}/edit',
+            [TokoController::class, 'edit']
+        )->name('product.edit');
+
+        Route::delete(
+            '/{product}',
+            [TokoController::class, 'destroy']
+        )->name('product.destroy');
+
+        Route::put(
+            '/{product}',
+            [TokoController::class, 'update']
+        )->name('product.update');
+
+        Route::get(
+            '/customer',
+            [TokoController::class, 'customer']
+        )->name('customer.admin');
+
+        Route::get(
+            'createc',
+            [TokoController::class, 'createc']
+        )->name('customer.create');
+
+        Route::post(
+            '/c',
+            [TokoController::class, 'storec']
+        )->name('customer.store');
+
+        Route::get(
+            '/{customer}/editc',
+            [TokoController::class, 'editc']
+        )->name('customer.edit');
+
+        Route::delete(
+            '/{customer}/c',
+            [TokoController::class, 'destroyc']
+        )->name('customer.destroy');
+
+        Route::put(
+            '/{customer}/c',
+            [TokoController::class, 'updatec']
+        )->name('customer.update');
+    });
+
+
     Route::get(
         '/about',
         [TokoController::class, 'about']
     );
-    Route::get(
-        '/admin',
-        [TokoController::class, 'admin']
-    );
-    Route::get(
-        '/product',
-        [TokoController::class, 'product']
-    )->name('product.admin');
-
-    Route::get(
-        'create',
-        [TokoController::class, 'create']
-    )->name('product.create');
-
-    Route::post(
-        '/',
-        [TokoController::class, 'store']
-    )->name('product.store');
-
-    Route::get(
-        '/{product}/edit',
-        [TokoController::class, 'edit']
-    )->name('product.edit');
-
-    Route::delete(
-        '/{product}',
-        [TokoController::class, 'destroy']
-    )->name('product.destroy');
-
-    Route::put(
-        '/{product}',
-        [TokoController::class, 'update']
-    )->name('product.update');
-
-    Route::get(
-        '/customer',
-        [TokoController::class, 'customer']
-    )->name('customer.admin');
-
-    Route::get(
-        'createc',
-        [TokoController::class, 'createc']
-    )->name('customer.create');
-
-    Route::post(
-        '/c',
-        [TokoController::class, 'storec']
-    )->name('customer.store');
-
-    Route::get(
-        '/{customer}/editc',
-        [TokoController::class, 'editc']
-    )->name('customer.edit');
-
-    Route::delete(
-        '/{customer}/c',
-        [TokoController::class, 'destroyc']
-    )->name('customer.destroy');
-
-    Route::put(
-        '/{customer}/c',
-        [TokoController::class, 'updatec']
-    )->name('customer.update');
+    
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
